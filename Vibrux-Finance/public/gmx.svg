@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1415 1415">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="794.13" y1="1689.09" x2="447.56" y2="806.42" gradientTransform="translate(194.5 1934.5) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#03d1cf" stop-opacity=".99"/>
+      <stop offset="1" stop-color="#4e09f8"/>
+    </linearGradient>
+  </defs>
+  <g id="TraderJoe_BG" data-name="TraderJoe BG">
+    <circle cx="707.5" cy="707.5" r="707.5"/>
+  </g>
+  <g id="GMX">
+    <g id="Layer_1">
+      <g id="_1704368933472" data-name=" 1704368933472">
+        <polygon class="cls-1" points="151.38 0 1263.62 0 1263.62 1112.23 151.38 1112.23 151.38 0"/>
+        <polygon class="cls-2" points="1263.62 961.42 709.28 150.82 151.38 961.42 928.17 961.42 709.28 652.21 599.84 814.6 483.27 814.6 709.28 490.27 1033.61 961.42 1263.62 961.42"/>
+      </g>
+    </g>
+  </g>
+</svg>
