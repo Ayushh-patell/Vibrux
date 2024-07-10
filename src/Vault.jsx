@@ -110,7 +110,7 @@ const Vault = () => {
         <p className=' text-white'><span className=' font-light'>0.00</span> {Vault}</p>
       </div>
 
-    <button disabled className=' w-full py-2 rounded disabled:cursor-not-allowed disabled:bg-gray-300 bg-[#0901eb] font-extralight'>Approve</button>
+    <button disabled className=' w-full py-2 rounded disabled:cursor-not-allowed disabled:bg-[#808080] bg-[#0901eb] font-extralight'>Approve</button>
 
     </div>
     </main>
