@@ -9,11 +9,11 @@ const Vault = () => {
     // const location = useLocation()
     // const data = location.state
     // console.log(data);
-    // let period = data.Period.split(' ')[0]
-    // period += " "
-    // period += (data.Period.split(' ')[1]==="D")?"Days":(data.Period.split(' ')[1]==="M")?"Months":"Years"
     const data = useParams()
-    const period = data.period
+    let periodData = data.period.split(' ')
+    let period = periodData[0]
+    period += " "
+    period += (periodData[1]==="D")?"Days":(periodData[1]==="M")?(parseFloat(periodData[0])>1)?"Months":"Month":"Years"
     console.log(data);
 
     const Vault = data.token2==="btc"?"BTC.B":data.token2==="eth"?"wETH":data.token2==="usdt"?"USDT":data.token2==="usdc"?"USDC":data.token2==="savax"?"sAVAX":data.token2==="wbtc"?"wBTC":"EURC"
@@ -73,12 +73,12 @@ const Vault = () => {
           {
             fixedSelect?
             <>
-            <p className=' text-lg font-light'>3.5%</p>
+            <p className=' text-lg font-light'>{data.fixed}%</p>
             <p className=' font-extralight text-sm'>Estimated Fixed Rate</p>
             </>
             :
             <>
-            <p className=' text-lg font-light'>11.14%</p>
+            <p className=' text-lg font-light'>{data.variable}%</p>
             <p className=' font-extralight text-sm'>Estimated Variable Rate</p>
             </>
           }

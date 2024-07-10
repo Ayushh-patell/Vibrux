@@ -131,7 +131,7 @@ const router = createHashRouter([
         element:<MarketHome/>
       },
       {
-        path:'/market/vault/:token1/:token2/:period',
+        path:'/market/vault/:token1/:token2/:period/:fixed/:variable',
         element:<Vault/>
       }
     ]

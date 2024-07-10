@@ -11,7 +11,7 @@ const DashboardCard = ({data}) => {
 
     
   return (
-    <Link to={`/market/vault/${token1}/${token2}/${data.period}`}>
+    <Link to={`/market/vault/${token1}/${token2}/${data.period}/${data.fixed}/${data.variable}`}>
     <div className=' rounded-2xl overflow-hidden brightness-[0.7] hover:brightness-100 hover:-translate-y-2 transition-all duration-150'>
       <div className=' p-4 flex justify-between items-center pb-10 relative overflow-hidden'>
       <div className=' cardBg absolute z-0 top-0 left-0 h-[200%] w-full' style={{backgroundImage:`linear-gradient(180deg,${tokenColor1}, ${tokenColor2}`}}></div>

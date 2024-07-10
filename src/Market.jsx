@@ -1,10 +1,7 @@
 import { useConnectWallet } from '@web3-onboard/react'
 import gsap from 'gsap'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
-import DashboardCard from './Component/DashboardCard'
-import { DashboardData } from './Component/DashboardData'
-import { leaderboardData } from './Component/LeaderboardData'
 const ethers = require('ethers')
 
 
