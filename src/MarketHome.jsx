@@ -14,41 +14,41 @@ const MarketHome = () => {
         //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
       });
 
-    const [open, setopen] = useState(0)
-    const [selectedTokens, setselectedTokens] = useState([])
+    // const [open, setopen] = useState(0)
+    // const [selectedTokens, setselectedTokens] = useState([])
     const [selectedCards, setselectedCards] = useState(DashboardData)
 
 
-    const handleTokens = (token) => {
-        if(selectedTokens.some((item) => (item===token))) {
-            let tokenArr = selectedTokens.filter((item) => (item!==token))
-         setselectedTokens(tokenArr)   
-        }
-        else {
-            let tokenArr = [...selectedTokens, token]
-            setselectedTokens(tokenArr)
-        }
-        console.log(selectedTokens);
-    }
+    // const handleTokens = (token) => {
+    //     if(selectedTokens.some((item) => (item===token))) {
+    //         let tokenArr = selectedTokens.filter((item) => (item!==token))
+    //      setselectedTokens(tokenArr)   
+    //     }
+    //     else {
+    //         let tokenArr = [...selectedTokens, token]
+    //         setselectedTokens(tokenArr)
+    //     }
+    //     console.log(selectedTokens);
+    // }
 
-    useEffect(() => {
-        if(selectedTokens.length===0) {
-            setselectedCards(DashboardData)
-        }
-        else {
-            let cardsArr = DashboardData.filter((data) => (
-                selectedTokens.every((token) => {
-                    return data.tokens[0]===token || data.tokens[1]===token
-                })
-            ))
-            setselectedCards(cardsArr)
-        }
-    },[selectedTokens])
+    // useEffect(() => {
+    //     if(selectedTokens.length===0) {
+    //         setselectedCards(DashboardData)
+    //     }
+    //     else {
+    //         let cardsArr = DashboardData.filter((data) => (
+    //             selectedTokens.every((token) => {
+    //                 return data.tokens[0]===token || data.tokens[1]===token
+    //             })
+    //         ))
+    //         setselectedCards(cardsArr)
+    //     }
+    // },[selectedTokens])
 
-    const handleDeSelect = () => {
-        setselectedTokens([])
-        document.querySelectorAll(".regular-checkbox").forEach(box => box.checked = false)
-    }  
+    // const handleDeSelect = () => {
+    //     setselectedTokens([])
+    //     document.querySelectorAll(".regular-checkbox").forEach(box => box.checked = false)
+    // }  
 
   return (
     
@@ -58,7 +58,7 @@ const MarketHome = () => {
       <p className=' text-left text-gray-400'>TVI: <span className=' pl-2'>{formatter.format(leaderboardData.map((data)=> parseInt(data.invested)).reduce((tvl, curr)=> tvl += curr))}</span></p>
 
 {/* FILTER SELECTION: FOR DESKTOP     */}
-      <div className=' w-full lg:flex hidden justify-between items-center'>
+      {/* <div className=' w-full lg:flex hidden justify-between items-center'>
           <div className=' mt-28'>
               <p className=' text-gray-400 text-lg my-2'>Sort</p>
               <div className=' flex justify-start items-center gap-2'>
@@ -100,10 +100,10 @@ const MarketHome = () => {
                   </div>
               </div>
           </div>
-      </div>
+      </div> */}
 
       {/*     MOBILE FILTER SECTION    */}
-      <div className='lg:hidden w-full my-4 space-y-2'>
+      {/* <div className='lg:hidden w-full my-4 space-y-2'>
           <div onClick={() => {open===1?setopen(0):setopen(1)}} className=' relative w-full border-l-2 border-[#9c9a9e] bg-[#222] text-xs font-medium rounded py-2 px-4 flex justify-between items-center'>
               <p>TVL</p>
               <img src="../Arrow.svg" alt=" arrow" className={` h-2 ${open===1?" -rotate-90":" rotate-90"} transition-all duration-150`} />
@@ -139,7 +139,7 @@ const MarketHome = () => {
 
               </div>
 </div>
-      </div>
+      </div> */}
 {/*         FILTER SECTION END       */}
 
 
