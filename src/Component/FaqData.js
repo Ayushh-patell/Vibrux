@@ -15,7 +15,7 @@ export const FaqData = [// FAQ FOR LEFT SIDE
 
 export const FaqData2 = [//FAQ FOR RIGHT SIDE
     {
-        question:"what Products are available in the Vibrux Protocol",
+        question:"What Products are available in the Vibrux Protocol",
         answer:"The Vibrux protocol offers Interest Rate Vaults as its primary product. These vaults divide a yield-bearing asset into two tranches, creating one product that provides a fixed yield and another with increased exposure to the performance of the underlying asset."
     },
     {

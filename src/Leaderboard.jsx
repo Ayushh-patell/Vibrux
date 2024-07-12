@@ -107,15 +107,19 @@ const Leaderboard = () => {
 
 
       {/*           MAIN PAGE            */}
-      <main className=' bg-[#111] px-5 pt-16 font-chakra text-white'>
+      <main className=' bg-[#111] px-5 pt-16 font-chakra text-white relative'>
       <div className=' container mx-auto max-w-screen-lg'>
       <Link to={"/market"}><div className=' text-sm cursor-pointer text-white/40 hover:text-white transition-all duration-200 flex justify-start items-center gap-2'> <div aria-hidden className=' h-1 w-4 bg-white/25 relative'> <div className=' h-full aspect-square bg-white '></div></div>Go Back</div></Link>
         <h1 className=' tracking-widest lg:text-4xl text-3xl lg:text-left text-center my-8 mt-12'>Leaderboard</h1>
-        <p className=' text-left text-white'>This ranking will define your eligibility for retroactive and future incentives. Click <a className=' text-gray-400' href="https://medium.com/p/ed4f93475de2" target="_blank" rel="noopener noreferrer">here</a> for the methodology and further details.</p>
-        <p className=' text-left text-white'>Leaderboard last updated: <span className=' text-green-600'>{new Date().toLocaleDateString()}</span></p>
 
 
-        <div className=' mt-10 overflow-x-scroll'>
+
+{/*         COMING SOON TEXT         */}
+<p className=' absolute z-40 top-1/2 left-1/2 -translate-x-1/2 lg:text-8xl text-6xl font-chakra w-max font-bold pointer-events-none'>COMING SOON</p>
+
+            
+        <div className=' mt-10 lg:overflow-x-hidden overflow-x-scroll blur-lg relative pointer-events-none'>
+
             <div className=' min-w-[550px] grid grid-cols-9 gap-2 lg:text-base text-xs text-white/35 py-3 px-1'>
                 <p className=' place-self-center'>RANK</p>
                 <p className=' col-span-2'>ADDRESS</p>
@@ -125,11 +129,11 @@ const Leaderboard = () => {
                 <p className=' place-self-center'>ROLE</p>
                 <p className=' place-self-center'>POINTS</p>
             </div>
-            <div className=' min-w-[550px] bg-gradient-to-b from-[#0901eb] to-transparent'>
+            <div className=' min-w-[550px] bg-gradient-to-b from-[#0901eb] to-transparent pointer-events-none'>
             {/*  EACH ROW IS RENDERED    */}
             {leaderboardData.map((data,i) => (
 
-                <div className=' grid grid-cols-9 py-4 px-1 gap-2 border-b border-[#111] lg:text-base text-xs'>
+                <div className=' grid grid-cols-9 py-4 px-1 gap-2 border-b border-[#111] lg:text-base text-xs pointer-events-none'>
                 <p className=' truncate pl-4 place-self-center'>{i===0? "🥇":i===1?"🥈":i===2?"🥉":i+1}</p>
                 <div className=' truncate col-span-2 flex justify-start items-center gap-2' title={data.address}><div className=' w-5 aspect-square rounded-full border border-white bg-blue-400'></div>{data.address.slice(0, 5)}...{data.address.slice(38)}</div>
                 <p className=' truncate col-span-2'>${data.invested}</p>

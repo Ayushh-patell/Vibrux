@@ -8,16 +8,10 @@ const DashboardCard = ({data}) => {
     const tokenColor2 = data.tokens[1]==="BTC.B"?"#F7931A":data.tokens[1]==="wETH"?"#222222":data.tokens[1]==="USDT"?"#50AB92":data.tokens[1]==="USDC"?"#2775CA":data.tokens[1]==="sAVAX"?"#00B3ED":data.tokens[1]==="wBTC"?"#2C2C2C":"#2775CA"
     
 
-    const VaultData = {
-      token1,
-      token2,
-      Rate:3.5,
-      Period:'1 M',
-      Protection:50
-    }
+
     
   return (
-    <Link to={'/market/vault'} state={VaultData}>
+    <Link to={`/market/vault/${token1}/${token2}/${data.period}/${data.fixed}/${data.variable}`}>
     <div className=' rounded-2xl overflow-hidden brightness-[0.7] hover:brightness-100 hover:-translate-y-2 transition-all duration-150'>
       <div className=' p-4 flex justify-between items-center pb-10 relative overflow-hidden'>
       <div className=' cardBg absolute z-0 top-0 left-0 h-[200%] w-full' style={{backgroundImage:`linear-gradient(180deg,${tokenColor1}, ${tokenColor2}`}}></div>

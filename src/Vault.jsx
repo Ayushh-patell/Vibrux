@@ -1,23 +1,51 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
+import { DashboardData } from './Component/DashboardData'
 
 const Vault = () => {
 
   const [fixedSelect, setfixedSelect] = useState(true)
-
+  const [data, setdata] = useState(null)
+  const [Vault, setVault] = useState("")
+  const [Protocol, setProtocol] = useState("")
+  // const period = data.period
     // const location = useLocation()
     // const data = location.state
-    // console.log(data);
-    const data = useParams()
-    let periodData = data.period.split(' ')
-    let period = periodData[0]
-    period += " "
-    period += (periodData[1]==="D")?"Days":(periodData[1]==="M")?(parseFloat(periodData[0])>1)?"Months":"Month":"Years"
-    console.log(data);
+    const dataurl = useParams()
+    let tokenArr = [dataurl.token1, dataurl.token2]
+useEffect(() => {
+  DashboardData.forEach((item) => {
+    if(item.tokens[0].toUpperCase() === tokenArr[0].toUpperCase() && item.tokens[1].toUpperCase() === tokenArr[1].toUpperCase()) {
+      let newData = {
+        period:item.period,
+        token1:dataurl.token1,
+        token2:dataurl.token2,
+        fixed:item.fixed,
+        variable:item.variable
+      }
+      setdata(newData)
+    }
+  })
+}, [])
 
-    const Vault = data.token2==="btc"?"BTC.B":data.token2==="eth"?"wETH":data.token2==="usdt"?"USDT":data.token2==="usdc"?"USDC":data.token2==="savax"?"sAVAX":data.token2==="wbtc"?"wBTC":"EURC"
-    const Protocol = data.token1==="btc"?"BTC.B":data.token1==="eth"?"wETH":data.token1==="usdt"?"USDT":data.token1==="usdc"?"USDC":data.token1==="savax"?"sAVAX":data.token1==="wbtc"?"wBTC":"EURC"
+    useEffect(() => {
+      if(data) {
+        let V = data.token2==="btc"?"BTC.B":data.token2==="eth"?"ETH":data.token2==="usdt"?"USDT":data.token2==="usdc"?"USDC":data.token2==="savax"?"sAVAX":data.token2==="wbtc"?"wBTC":data.token2==="vbx"?"VBX":"EURC"
+        let P = data.token1==="btc"?"BTC.B":data.token1==="eth"?"ETH":data.token1==="usdt"?"USDT":data.token1==="usdc"?"USDC":data.token1==="savax"?"sAVAX":data.token1==="wbtc"?"wBTC":data.token1==="vbx"?"VBX":"EURC"
+        setVault(V)
+        setProtocol(P)
+      }
+    }, [data])
+    
+    
+
+    // let periodData = data.period.split(' ')
+    // let period = periodData[0]
+    // period += " "
+    // period += (periodData[1]==="D")?"Days":(periodData[1]==="M")?(parseFloat(periodData[0])>1)?"Months":"Month":"Years"
+
+
 
   return (
     <div className=' bg-black font-chakra py-10'>
@@ -26,6 +54,8 @@ const Vault = () => {
     </Link>
 {/* rgb(150, 86, 255) */}
 {/* rgb(70, 40, 120) */}
+
+{data? 
     <main className=' w-full max-w-[500px] h-full mx-auto text-white my-10'>
     <div className=' w-full sm:p-4 p-2 bg-[#292929] rounded-xl flex justify-center items-center gap-1 mb-2'>
       <div className=' w-1/2 flex justify-start items-center gap-3 '>
@@ -35,7 +65,7 @@ const Vault = () => {
         <p className=' font-medium sm:text-xl text-base'>{Vault}</p>
         </div>
 
-        <img src={`../${data.token2}.svg`} alt={data.token2} className=' sm:size-12 size-8' />
+        <img src={`../${data.token2}.svg`} alt={data.token2} className=' sm:size-12 size-8 rounded-full object-contain object-center' />
         
       </div>
       <div className=' w-1/2 flex justify-start items-center gap-3 '>
@@ -45,7 +75,7 @@ const Vault = () => {
         <p className=' font-medium sm:text-xl text-base'>{Protocol}</p>
         </div>
 
-        <img src={`../${data.token1}.svg`} alt={data.token1} className=' sm:size-12 size-8' />
+        <img src={`../${data.token1}.svg`} alt={data.token1} className=' sm:size-12 size-8 rounded-full object-contain object-center' />
         
       </div>
 
@@ -88,7 +118,7 @@ const Vault = () => {
           <p className=' font-extralight text-sm'>Your deposits</p>
         </div>
         <div className=' p-3 rounded-lg bg-[#2020203b]'>
-          <p className=' text-lg font-light'>{period}</p>
+          <p className=' text-lg font-light'>{data.period}</p>
           <p className=' font-extralight text-sm'>Period</p>
         </div>
         <div className=' p-3 rounded-lg bg-[#2020203b]'>
@@ -121,6 +151,11 @@ const Vault = () => {
 
     </div>
     </main>
+:
+<div className=' w-full max-w-[500px] h-[90dvh] mx-auto bg-[#292929] animate-pulse rounded-xl my-10'></div>
+
+
+}
       
     </div>
   )

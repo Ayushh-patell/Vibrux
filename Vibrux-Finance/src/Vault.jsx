@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
-import { useLocation } from 'react-router'
+import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 
 const Vault = () => {
 
   const [fixedSelect, setfixedSelect] = useState(true)
 
-    const location = useLocation()
-    const data = location.state
-    console.log(data);
-    let period = data.Period.split(' ')[0]
+    // const location = useLocation()
+    // const data = location.state
+    // console.log(data);
+    const data = useParams()
+    let periodData = data.period.split(' ')
+    let period = periodData[0]
     period += " "
-    period += (data.Period.split(' ')[1]==="D")?"Days":(data.Period.split(' ')[1]==="M")?"Months":"Years"
+    period += (periodData[1]==="D")?"Days":(periodData[1]==="M")?(parseFloat(periodData[0])>1)?"Months":"Month":"Years"
+    console.log(data);
 
     const Vault = data.token2==="btc"?"BTC.B":data.token2==="eth"?"wETH":data.token2==="usdt"?"USDT":data.token2==="usdc"?"USDC":data.token2==="savax"?"sAVAX":data.token2==="wbtc"?"wBTC":"EURC"
     const Protocol = data.token1==="btc"?"BTC.B":data.token1==="eth"?"wETH":data.token1==="usdt"?"USDT":data.token1==="usdc"?"USDC":data.token1==="savax"?"sAVAX":data.token1==="wbtc"?"wBTC":"EURC"
@@ -53,25 +56,29 @@ const Vault = () => {
         <button onClick={() => {setfixedSelect(true)}} className={` font-extralight hover:bg-[#0901eb]/50 ${fixedSelect?" bg-[#0901eb]":""} rounded-xl text-center p-2 w-full`}>Fixed</button>
         <button onClick={() => {setfixedSelect(false)}} className={` font-extralight hover:bg-[#0901eb]/50 ${!fixedSelect?" bg-[#0901eb]":""} rounded-xl text-center p-2 w-full`}>Variable</button>
       </div>
-      <label htmlFor="UnverifiedC" className=' flex justify-start items-center gap-3 font-extralight'> <input type="checkbox"  className='regular-checkbox ' id='UnverifiedC' /> <label htmlFor="UnverifiedC" className=''></label> Show unverified Contracts</label>
 
-      <select name="contract" id="ContractVault" className=' w-full bg-[#1f1f1f] p-2 my-4'>
+
+      <button disabled className=' my-4 w-full py-2 rounded-lg disabled:cursor-not-allowed disabled:bg-[#808080] bg-[#0901eb] font-extralight'>Deposit (Coming Soon)</button>
+
+      {/* <label htmlFor="UnverifiedC" className=' flex justify-start items-center gap-3 font-extralight'> <input type="checkbox"  className='regular-checkbox ' id='UnverifiedC' /> <label htmlFor="UnverifiedC" className=''></label> Show unverified Contracts</label> */}
+
+      {/* <select name="contract" id="ContractVault" className=' w-full bg-[#1f1f1f] p-2 my-4'>
         <option disabled value="" className=' text-xs text-white/30 font-thin'>Maturity Date</option>
         <option className=' text-xs font-extralight' selected value="0xdsef">0xdsef | <span className=' text-red-500'>Deposit:Closed</span> | <span className=' p-1 rounded-lg bg-purple-500'>Status:invested</span></option>
         <option className=' text-xs font-extralight'  value="0xdsaf">0xdsaf | <span className=' text-red-500'>Deposit:Open</span> | <span className=' p-1 rounded-lg bg-purple-500'>Status:invested</span></option>
-      </select>
+      </select> */}
 
       <div className=' grid grid-cols-2 gap-7 text-lg my-4'>
         <div className=' p-3 rounded-lg bg-[#2020203b]'>
           {
             fixedSelect?
             <>
-            <p className=' text-lg font-light'>{data.Rate}%</p>
+            <p className=' text-lg font-light'>{data.fixed}%</p>
             <p className=' font-extralight text-sm'>Estimated Fixed Rate</p>
             </>
             :
             <>
-            <p className=' text-lg font-light'>11.14%</p>
+            <p className=' text-lg font-light'>{data.variable}%</p>
             <p className=' font-extralight text-sm'>Estimated Variable Rate</p>
             </>
           }
@@ -88,7 +95,7 @@ const Vault = () => {
         {
             fixedSelect?
             <>
-            <p className=' text-lg font-light'>{data.Protection}%</p>
+            <p className=' text-lg font-light'>50%</p>
             <p className=' font-extralight text-sm'>Protection</p>
             </>
             :
@@ -109,6 +116,8 @@ const Vault = () => {
         <p className=' text-white/30 font-extralight'>Your Refund</p>
         <p className=' text-white'><span className=' font-light'>0.00</span> {Vault}</p>
       </div>
+
+    <button disabled className=' mt-4 w-full py-2 rounded-lg disabled:cursor-not-allowed disabled:bg-[#808080] bg-[#0901eb] font-extralight'>Approve</button>
 
     </div>
     </main>

@@ -1,6 +1,7 @@
 import gsap from 'gsap'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 
 
 const NavBar = () => {
@@ -100,19 +101,19 @@ const NavBar = () => {
 {/*         NAVIGATIONS      */}
       <div className=' absolute lg:left-3 left-0 top-[5.4rem] lg:w-[73%] w-full max-w-[100vw] h-[85%] overflow-y-scroll scrollerHidden text-left pt-5 pointer-events-auto'>
         <div className=' lg:border-b border-gray-800 py-3 px-5'>
-            <a onClick={()=>{toggleNav(); setNav(1)}} href="#resource">
+        <HashLink to="/#resource" onClick={()=>{toggleNav(); setNav(1)}}>
             <h4 className={`${Nav===1?" bg-[#0901eb!important] border-[#0901eb!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>RESOURCES</h4>
-            </a>
+            </HashLink>
         </div>
         <div className=' lg:border-b border-gray-800 py-3 px-5'>
-            <a onClick={()=>{toggleNav(); setNav(2)}} href="#customize">
-            <h4 className={`${Nav===2?" bg-[#0901eb!important] border-[#0901eb!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>CUSTOMIZE</h4>
-            </a>
+        <HashLink to="/#customize" onClick={()=>{toggleNav(); setNav(2)}}>
+            <h4  className={`${Nav===2?" bg-[#0901eb!important] border-[#0901eb!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>CUSTOMIZE</h4>
+            </HashLink>
         </div>
         <div className=' lg:border-b border-gray-800 py-3 px-5'>
-            <a onClick={()=>{toggleNav(); setNav(3)}} href="#newsletter">
+        <HashLink to="/#newsletter" onClick={()=>{toggleNav(); setNav(3)}}>
             <h4 className={`${Nav===3?" bg-[#0901eb!important] border-[#0901eb!important]":""} lg:text-9xl text-5xl font-chakra menuText`}>NEWSLETTER</h4>
-            </a>
+            </HashLink>
         </div>
 
 
