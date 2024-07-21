@@ -31,7 +31,7 @@ export const DashboardData = [
     },
     {
         TVL:"0.00",
-        tokens:["ETH", "VBX"],
+        tokens:["ETH", "NXR"],
         fixedY:"29.4%",
         variableY:"23.1%",
         boosted:false,

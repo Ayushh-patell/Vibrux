@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const DashboardCard = ({data}) => {
-    const token1 = data.tokens[0]==="BTC.B"?"btc":data.tokens[0]==="ETH"?"eth":data.tokens[0]==="USDT"?"usdt":data.tokens[0]==="USDC"?"usdc":data.tokens[0]==="sAVAX"?"savax":data.tokens[0]==="wBTC"?"wbtc":data.tokens[0]==="VBX"?"vbx":"eurc"
-    const token2 = data.tokens[1]==="BTC.B"?"btc":data.tokens[1]==="ETH"?"eth":data.tokens[1]==="USDT"?"usdt":data.tokens[1]==="USDC"?"usdc":data.tokens[1]==="sAVAX"?"savax":data.tokens[1]==="wBTC"?"wbtc":data.tokens[1]==="VBX"?"vbx":"eurc"
-    const tokenColor1 = data.tokens[0]==="BTC.B"?"#F7931A":data.tokens[0]==="ETH"?"#222222":data.tokens[0]==="USDT"?"#50AB92":data.tokens[0]==="USDC"?"#2775CA":data.tokens[0]==="sAVAX"?"#00B3ED":data.tokens[0]==="wBTC"?"#ffb964":data.tokens[0]==="VBX"?"#2dafdd":"#2775CA"
-    const tokenColor2 = data.tokens[1]==="BTC.B"?"#F7931A":data.tokens[1]==="ETH"?"#222222":data.tokens[1]==="USDT"?"#50AB92":data.tokens[1]==="USDC"?"#2775CA":data.tokens[1]==="sAVAX"?"#00B3ED":data.tokens[1]==="wBTC"?"#ffb964":data.tokens[0]==="VBX"?"#2dafdd":"#2775CA"
+    const token1 = data.tokens[0]==="BTC.B"?"btc":data.tokens[0]==="ETH"?"eth":data.tokens[0]==="USDT"?"usdt":data.tokens[0]==="USDC"?"usdc":data.tokens[0]==="sAVAX"?"savax":data.tokens[0]==="wBTC"?"wbtc":data.tokens[0]==="NXR"?"nxr":"eurc"
+    const token2 = data.tokens[1]==="BTC.B"?"btc":data.tokens[1]==="ETH"?"eth":data.tokens[1]==="USDT"?"usdt":data.tokens[1]==="USDC"?"usdc":data.tokens[1]==="sAVAX"?"savax":data.tokens[1]==="wBTC"?"wbtc":data.tokens[1]==="NXR"?"nxr":"eurc"
+    const tokenColor1 = data.tokens[0]==="BTC.B"?"#F7931A":data.tokens[0]==="ETH"?"#222222":data.tokens[0]==="USDT"?"#50AB92":data.tokens[0]==="USDC"?"#2775CA":data.tokens[0]==="sAVAX"?"#00B3ED":data.tokens[0]==="wBTC"?"#ffb964":data.tokens[0]==="NXR"?"#2dafdd":"#2775CA"
+    const tokenColor2 = data.tokens[1]==="BTC.B"?"#F7931A":data.tokens[1]==="ETH"?"#222222":data.tokens[1]==="USDT"?"#50AB92":data.tokens[1]==="USDC"?"#2775CA":data.tokens[1]==="sAVAX"?"#00B3ED":data.tokens[1]==="wBTC"?"#ffb964":data.tokens[0]==="NXR"?"#2dafdd":"#2775CA"
     
 
 

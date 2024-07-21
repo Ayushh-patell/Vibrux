@@ -31,8 +31,8 @@ useEffect(() => {
 
     useEffect(() => {
       if(data) {
-        let V = data.token2==="btc"?"BTC.B":data.token2==="eth"?"ETH":data.token2==="usdt"?"USDT":data.token2==="usdc"?"USDC":data.token2==="savax"?"sAVAX":data.token2==="wbtc"?"wBTC":data.token2==="vbx"?"VBX":"EURC"
-        let P = data.token1==="btc"?"BTC.B":data.token1==="eth"?"ETH":data.token1==="usdt"?"USDT":data.token1==="usdc"?"USDC":data.token1==="savax"?"sAVAX":data.token1==="wbtc"?"wBTC":data.token1==="vbx"?"VBX":"EURC"
+        let V = data.token2==="btc"?"BTC.B":data.token2==="eth"?"ETH":data.token2==="usdt"?"USDT":data.token2==="usdc"?"USDC":data.token2==="savax"?"sAVAX":data.token2==="wbtc"?"wBTC":data.token2==="nxr"?"NXR":"EURC"
+        let P = data.token1==="btc"?"BTC.B":data.token1==="eth"?"ETH":data.token1==="usdt"?"USDT":data.token1==="usdc"?"USDC":data.token1==="savax"?"sAVAX":data.token1==="wbtc"?"wBTC":data.token1==="nxr"?"NXR":"EURC"
         setVault(V)
         setProtocol(P)
       }
