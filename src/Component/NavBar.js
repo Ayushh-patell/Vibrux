@@ -69,7 +69,7 @@ const NavBar = () => {
   return (
     <nav className=' MainNav fixed z-50 top-0 left-0 w-full flex justify-between px-5 pr-3 py-1 items-start text-white overflow-hidden'>
       <div className=' mt-4'>
-                <img src="../vibrux bg.png" alt="vibrux logo" className=' lg:h-10 h-5' />
+                <img src="../Nexara.png" alt="Nexara logo" className=' lg:h-10 h-5' />
                 </div>
       <div className=' flex  justify-end items-start w-[30%] h-full gap-3'>
         <div onClick={toggleNav} className='pointer-events-auto flex justify-center cursor-pointer items-center h-8 py-9'>

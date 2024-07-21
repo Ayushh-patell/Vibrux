@@ -1,19 +1,19 @@
+import { Leva } from 'leva';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { Leva } from 'leva';
-import Market from './Market';
-import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
+import './index.css';
 import Leaderboard from './Leaderboard';
+import Market from './Market';
+import reportWebVitals from './reportWebVitals';
 
-import { Web3OnboardProvider, init } from '@web3-onboard/react'
+import { Web3OnboardProvider, init } from '@web3-onboard/react';
 
 //      WALLET MODULES
-import injectedModule from '@web3-onboard/injected-wallets'
-import walletConnectModule from '@web3-onboard/walletconnect'
-import coinbaseModule from '@web3-onboard/coinbase'
+import coinbaseModule from '@web3-onboard/coinbase';
+import injectedModule from '@web3-onboard/injected-wallets';
+import walletConnectModule from '@web3-onboard/walletconnect';
 
 import Dashboard from './Dashboard';
 import MarketHome from './MarketHome';
@@ -131,7 +131,7 @@ const router = createHashRouter([
         element:<MarketHome/>
       },
       {
-        path:'/market/vault/:token1/:token2/:period/:fixed/:variable',
+        path:'/market/vault/:token1/:token2',
         element:<Vault/>
       }
     ]

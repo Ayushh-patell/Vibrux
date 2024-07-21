@@ -163,7 +163,6 @@ return (
             <div className=' w-full overflow-x-hidden text-left'>
             <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /><a href="https://twitter.com/vibruxfi" target="_blank" rel="noopener noreferrer">Twitter</a></div>
                 <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /><a href="http://t.me/vibruxfi" target="_blank" rel="noopener noreferrer">Telegram</a></div>
-                <div className=' flex justify-start items-center gap-2 relative -left-[23px] mb-2 navFooterItem transition-[left] duration-200 ease-out'><img src="../Arrow.svg" alt="arrow" className=' h-3 inline-block' /> Medium</div>
 
             </div>
             </div>

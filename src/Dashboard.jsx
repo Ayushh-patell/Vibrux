@@ -51,7 +51,7 @@ return (
         <nav className=' bg-[#111] relative flex justify-between items-center lg:px-6 px-3 lg:py-5 py-2 font-chakra text-white'>
             <div className=' w-full flex lg:justify-start justify-between items-center lg:gap-16 gap-3 py-2'>
             <div className=' bg-black mix-blend-lighten'>
-                <img src="../vibrux.png" alt="vibrux logo" className=' lg:h-7 h-5' />
+                <img src="../Nexara.png" alt="Nexara logo" className=' lg:h-7 h-5' />
                 </div>
                 <div className=' lg:flex hidden justify-between items-center text-sm gap-24 text-gray-400 '>
                     <p className=' cursor-pointer text-white'>Dashboard</p>

@@ -431,11 +431,11 @@ const handleJoin = () => {
           }
           {/* FORM:END */}
           
-          <p className=" lg:hidden text-gray-500 my-5">Vibrux finance 2024</p>
+          <p className=" lg:hidden text-gray-500 my-5">Nexara finance 2024</p>
 
           <div className=" my-32 lg:mt-48 mt-12 grid lg:grid-cols-3 grid-cols-2 lg:gap-7">
             <div className=" lg:flex hidden flex-col justify-between items-start">
-              <p className=" text-gray-500">Vibrux finance 2024</p>
+              <p className=" text-gray-500">Nexara finance 2024</p>
               <p onClick={() => {window.scrollTo({top:0, behavior:"smooth"})}} className=" text-white tracking-[6px] pointer-events-auto cursor-pointer">BACK TO TOP</p>
             </div>
 
@@ -468,7 +468,7 @@ const handleJoin = () => {
       {/*       LOADING SCREEN       */}
       <div id="loadingscreen" className=" fixed z-50 top-0 left-0 w-full h-full flex justify-between items-center flex-col" title="Loading">
       <div className=" loadingData absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-full h-full flex flex-col justify-center items-center gap-5">
-        <img src="../vibrux bg.png" alt="vibrux" className=" h-10" />
+        <img src="../Nexara.png" alt="Nexara" className=" h-10" />
         <div className=" w-full h-px bg-white scale-x-0 loadingBar"></div>
         <p className=" text-4xl text-white font-chakra"><span className=" loadingNumber">0</span>%</p>
       </div>

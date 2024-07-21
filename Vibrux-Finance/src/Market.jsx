@@ -102,13 +102,13 @@ const Market = () => {
             <Link onClick={() => {gsap.set("body", { overflow:"auto"})}} to={"/dashboard"}><p className=' cursor-pointer hover:text-white transition-all duration-200'>Dashboard</p></Link>
             <p className=' text-3xl cursor-pointer text-white'>Markets</p>
             <Link onClick={() => {gsap.set("body", { overflow:"auto"})}} to={"/leaderboard"}><p className=' cursor-pointer hover:text-white transition-all duration-200'>Leaderboard</p></Link>
-            <div aria-hidden className=' mt-20 h-[2px] w-10 bg-[#9c9a9e] rounded-full mb-5'/>
+            {/* <div aria-hidden className=' mt-20 h-[2px] w-10 bg-[#9c9a9e] rounded-full mb-5'/>
             <ul>
                         <li className=' text-gray-400 hover:text-white transition-all duration-150 my-3 cursor-pointer px-4 text-left'>Docs</li>
                         <li className=' text-gray-400 hover:text-white transition-all duration-150 my-3 cursor-pointer px-4 text-left'>Community</li>
                         <li className=' text-gray-400 hover:text-white transition-all duration-150 my-3 cursor-pointer px-4 text-left'>Feedback</li>
                         
-                    </ul>
+                    </ul> */}
             </div>
         </nav>
         {/*             NAVBAR:END           */}
