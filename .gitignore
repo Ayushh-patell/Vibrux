@@ -5,6 +5,7 @@
 /.pnp
 /Nexara-Finance
 .pnp.js
+.zip
 
 # testing
 /coverage
@@ -22,3 +23,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+Nexara-Finance.zip
+Nexara-Finance.zip
