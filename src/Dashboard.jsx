@@ -109,7 +109,8 @@ return (
 
       <div className=' max-w-screen-lg mx-auto flex flex-col justify-center items-center'>
       {/*       SHOW A CONNECT BUTTON IF WALLET NOT CONNECTED        */}
-        {!wallet ? <button  onClick={() => (wallet ? disconnect(wallet) : connect())} className=' my-2 border border-[#FFFFFF21] bg-[#212121] px-2 py-2 rounded-lg flex justify-center items-center gap-2'>Connect</button>
+      {/* !wallet */}
+        {false ? <button  onClick={() => (wallet ? disconnect(wallet) : connect())} className=' my-2 border border-[#FFFFFF21] bg-[#212121] px-2 py-2 rounded-lg flex justify-center items-center gap-2'>Connect</button>
         :
         <>
 
